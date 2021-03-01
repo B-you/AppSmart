@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import RealmSwift
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -14,9 +14,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+//        let config = Realm.Configuration(
+//            schemaVersion: 3,
+//            migrationBlock: { migration, oldSchemaVersion in
+//                if (oldSchemaVersion < 1) {}
+//            })
+//        
+//        // Tell Realm to use this new configuration object for the default Realm
+//        Realm.Configuration.defaultConfiguration = config
+//        
+//        let db = try! Realm()
+//        try! db.write {
+//            db.delete(db.objects(Json4Swift_Base.self))
+//            
+//       
+//    }
         return true
     }
-
     // MARK: UISceneSession Lifecycle
 
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
