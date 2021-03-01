@@ -1,11 +1,11 @@
 
 import RealmSwift
 import Foundation
-struct Series :  Codable {
-    var available : Int?
-    var returned : Int?
-    var collectionURI : String?
-     var items : [Items]?
+class Series : Object, Codable {
+    @objc dynamic var available : Int = 0
+    @objc dynamic var returned : Int = 0
+    @objc dynamic var collectionURI : String?
+   var items : [Items]?
 
 	enum CodingKeys: String, CodingKey {
 

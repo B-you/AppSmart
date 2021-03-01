@@ -44,16 +44,16 @@ class AvengerService{
                            let parseddata = try decoder.decode(Json4Swift_Base.self, from: data)
                            DispatchQueue.main.async {
                                closure(parseddata)
-//                            DispatchQueue.global(qos: .userInteractive).async {
-//                                do{
-//                                    let db = try Realm()
-//                                    try! db.write{
-//                                        db.add(parseddata, update: .all)
-//                                    }
-//                                }catch{
-//                                    
-//                                }
-//                            }
+                            DispatchQueue.global(qos: .userInteractive).async {
+                                do{
+                                    let db = try Realm()
+                                    try! db.write{
+                                        db.add(parseddata, update: .all )
+                                    }
+                                }catch{
+
+                                }
+                            }
                            }
                        } catch let error{
                            print("avenger getting error is \(error.localizedDescription)")
@@ -89,16 +89,16 @@ class AvengerService{
                            let parseddata = try decoder.decode(Json4Swift_Base.self, from: data)
                            DispatchQueue.main.async {
                                closure(parseddata)
-//                            DispatchQueue.global(qos: .userInteractive).async {
-//                                do{
-//                                    let db = try Realm()
-//                                    try! db.write{
-//                                        db.add(parseddata, update: .all)
-//                                    }
-//                                }catch{
-//
-//                                }
-//                            }
+                            DispatchQueue.global(qos: .userInteractive).async {
+                                do{
+                                    let db = try Realm()
+                                    try! db.write{
+                                        db.add(parseddata, update: .all)
+                                    }
+                                }catch{
+
+                                }
+                            }
                            }
                        } catch let error{
                            print("event getting error is \(error.localizedDescription)")

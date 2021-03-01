@@ -1,9 +1,9 @@
 import RealmSwift
 
 import Foundation
-struct Thumbnail :  Codable {
-    var path : String?
-    var theextension : String?
+class Thumbnail : Object,   Codable {
+    @objc dynamic var path : String?
+    @objc dynamic var theextension : String?
 
 	enum CodingKeys: String, CodingKey {
 

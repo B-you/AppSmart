@@ -1,9 +1,9 @@
 
 import RealmSwift
 import Foundation
-struct Urls :   Codable {
-   var type : String?
-     var url : String?
+class Urls : Object,  Codable {
+    @objc dynamic var type : String?
+    @objc dynamic var url : String?
 
 	enum CodingKeys: String, CodingKey {
 

@@ -1,35 +1,35 @@
 
 import RealmSwift
 import Foundation
-struct Results :  Codable {
+class Results : Object, Codable {
     
     
-     var id : Int?
-     var name : String?
-    var thedescription : String?
-     var modified : String?
-    var resourceURI : String?
-     var urls : [Urls]?
-    var thumbnail : Thumbnail?
-     var comics : Comics?
-     var stories : Stories?
-     var events : Events?
-     var series : Series?
+    @objc dynamic var id : Int = 0
+    @objc dynamic var name : String?
+    @objc dynamic var thedescription : String?
+    @objc dynamic var modified : String?
+    @objc dynamic var resourceURI : String?
+    var urls : [Urls]?
+    @objc dynamic var thumbnail : Thumbnail?
+    @objc dynamic var comics : Comics?
+    @objc dynamic var stories : Stories?
+    @objc dynamic var events : Events?
+    @objc dynamic var series : Series?
     
-    init(id : Int,name : String,description : String, modified : String, resourceURI : String, urls : [Urls], thumbnail : Thumbnail,comics : Comics, stories : Stories,events : Events,   series : Series  ) {
-        self.id = id
-        self.name = name
-        self.thedescription = description
-        self.modified = modified
-        self.resourceURI = resourceURI
-        self.urls = urls
-        self.thumbnail = thumbnail
-        self.comics = comics
-        self.stories = stories
-        self.events = events
-        self.series = series
-        
-    }
+//    init(id : Int,name : String,description : String, modified : String, resourceURI : String, urls : [Urls], thumbnail : Thumbnail,comics : Comics, stories : Stories,events : Events,   series : Series  ) {
+//        self.id = id
+//        self.name = name
+//        self.thedescription = description
+//        self.modified = modified
+//        self.resourceURI = resourceURI
+//        self.urls = urls
+//        self.thumbnail = thumbnail
+//        self.comics = comics
+//        self.stories = stories
+//        self.events = events
+//        self.series = series
+//
+//    }
 
 	enum CodingKeys: String, CodingKey {
 

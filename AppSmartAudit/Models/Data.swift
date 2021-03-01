@@ -1,20 +1,20 @@
 
 import RealmSwift
 import Foundation
-struct Datas :   Codable {
-    var offset : Int?
-     var limit : Int?
-     var total : Int?
-     var count : Int?
+class Datas : Object,  Codable {
+    @objc dynamic var offset : Int = 0
+    @objc dynamic var limit : Int = 0
+    @objc dynamic var total : Int = 0
+    @objc dynamic var count : Int = 0
     var results : [Results]?
     
-    init(offset : Int,limit : Int , total : Int, count : Int, results : [Results]) {
-        self.offset = offset
-        self.limit = limit
-        self.total = total
-        self.count = count
-        self.results = results
-    }
+//    init(offset : Int,limit : Int , total : Int, count : Int, results : [Results]) {
+//        self.offset = offset
+//        self.limit = limit
+//        self.total = total
+//        self.count = count
+//        self.results = results
+//    }
     
 
 	enum CodingKeys: String, CodingKey {

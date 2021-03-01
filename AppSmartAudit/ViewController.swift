@@ -7,7 +7,7 @@
 
 import UIKit
 import SDWebImage
-
+import RealmSwift
 class ViewController: UIViewController, UITextFieldDelegate {
     var result = [Json4Swift_Base]()
     var myresult = [Results]()
@@ -22,7 +22,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+//        let realm = try! Realm()
+////        let matched = realm.object(ofType: mysearchresult.self, forPrimaryKey: <#_#>)
+//        let info = realm.objects(Json4Swift_Base.self)
+//        print("info is \(info)")
+        
         collectionView.delegate = self
         collectionView.dataSource = self
         AvengerService.shared.getAvengers { (result) in
@@ -31,6 +35,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
             self.myresult.append(contentsOf: (result.data?.results)!)
 //            self.myresult.append(result.data?.results)
             print("the count is \(self.result[0].data?.results!.count)")
+            
+           
+           
             self.collectionView.reloadData()
         }
         self.searchTF.delegate = self

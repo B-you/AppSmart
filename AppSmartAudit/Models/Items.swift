@@ -1,10 +1,10 @@
 
 import RealmSwift
 import Foundation
-struct Items :  Codable {
-    var resourceURI : String?
-   var name : String?
-    var type : String?
+class Items : Object, Codable {
+    @objc dynamic var resourceURI : String?
+    @objc dynamic var name : String?
+    @objc dynamic var type : String?
 
 	enum CodingKeys: String, CodingKey {
 

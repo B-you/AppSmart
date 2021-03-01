@@ -1,24 +1,25 @@
 
 import RealmSwift
 import Foundation
-struct Json4Swift_Base :  Codable {
-    var code : Int?
-    var status : String?
-    var copyright : String?
-    var attributionText : String?
-   var attributionHTML : String?
-     var data : Datas?
-    var etag : String?
+class Json4Swift_Base : Object,  Codable {
+    @objc dynamic var id : String = NSUUID().uuidString
+    @objc dynamic var code : Int = 0
+    @objc dynamic var status : String?
+    @objc dynamic var copyright : String?
+    @objc dynamic var attributionText : String?
+    @objc dynamic var attributionHTML : String?
+    @objc dynamic var data : Datas? 
+    @objc dynamic var etag : String?
     
-    init(code : Int, status: String,copyright : String,attributionText : String,attributionHTML : String,data : Datas, etag : String) {
-        self.code = code
-        self.status = status
-        self.copyright = copyright
-        self.attributionText = attributionText
-        self.attributionHTML = attributionHTML
-        self.data = data
-        self.etag = etag
-    }
+//    init(code : Int, status: String,copyright : String,attributionText : String,attributionHTML : String,data : Datas, etag : String) {
+//        self.code = code
+//        self.status = status
+//        self.copyright = copyright
+//        self.attributionText = attributionText
+//        self.attributionHTML = attributionHTML
+//        self.data = data
+//        self.etag = etag
+//    }
 
 	enum CodingKeys: String, CodingKey {
 
@@ -30,6 +31,9 @@ struct Json4Swift_Base :  Codable {
 		case data = "data"
 		case etag = "etag"
 	}
+    override static func primaryKey() -> String? {
+        return "id"
+    }
 
 //    required init(from decoder: Decoder) throws {
 //		let values = try decoder.container(keyedBy: CodingKeys.self)
